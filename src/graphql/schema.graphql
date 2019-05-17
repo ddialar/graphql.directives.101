@@ -1,10 +1,19 @@
+enum Role {
+    SYSADMIN
+    ADMIN
+    USER
+    GUEST
+}
+
+directive @auth(requires: Role = SYSADMIN) on FIELD_DEFINITION
+
 type UserType {
     name: String!
     surname: String!
-    role: String!
-    token: String!
-    createdAt: Int!
-    lastLoginAt: Int!
+    role: String! @auth(requires: USER)
+    token: String! @auth
+    createdAt: Int! @auth
+    lastLoginAt: Int! @auth(requires: ADMIN)
 }
 
 type Query {
