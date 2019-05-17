@@ -1,0 +1,12 @@
+type UserType {
+    name: String!
+    surname: String!
+    role: String!
+    token: String!
+    createdAt: Int!
+    lastLoginAt: Int!
+}
+
+type Query {
+    getAllUsers: [UserType]
+}

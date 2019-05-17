@@ -1,0 +1,198 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-05-17T14:05:01.402Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_dd07af5ba6c64a6585ca3b5dd3da30c8",
+			"created": 1558091463038,
+			"description": "",
+			"modified": 1558091463038,
+			"name": "GQL Directives",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_3b5ecbc58a234a4094da4e9676901df2",
+			"color": null,
+			"created": 1558091463088,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1558091463088,
+			"modified": 1558091463088,
+			"name": "New Environment",
+			"parentId": "wrk_dd07af5ba6c64a6585ca3b5dd3da30c8",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_eed944f3592049b79ea8390953727085",
+			"cookies": [],
+			"created": 1558091463090,
+			"modified": 1558091463090,
+			"name": "Default Jar",
+			"parentId": "wrk_dd07af5ba6c64a6585ca3b5dd3da30c8",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_cf245dcf7b0c4bad851c72ea32235a1b",
+			"created": 1558091524934,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1558091524935,
+			"modified": 1558091524934,
+			"name": "No Directives",
+			"parentId": "wrk_dd07af5ba6c64a6585ca3b5dd3da30c8",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_521264f1aaab4113b7b550c95c2fffa7",
+			"created": 1558093481382,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1555967575844,
+			"modified": 1558093491809,
+			"name": "Auth Directive",
+			"parentId": "wrk_dd07af5ba6c64a6585ca3b5dd3da30c8",
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_698532b9287441e684c16f29194d8474",
+			"color": "#0aff00",
+			"created": 1558091478955,
+			"data": {
+				"graphql_endpoint": "graphql",
+				"port": 3500,
+				"token": "{% response 'body', 'req_6c3b3f8ada5146628102feaa72b1a2bf', '$.data.signin.token' %}",
+				"url": "http://localhost"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1558091478956,
+			"modified": 1558091502527,
+			"name": "Development",
+			"parentId": "env_3b5ecbc58a234a4094da4e9676901df2",
+			"_type": "environment"
+		},
+		{
+			"_id": "req_0a329256a38f47f5a84f81a122ccf379",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query {\\n  getAllUsers {\\n    name\\n    surname\\n    role\\n    token\\n    createdAt\\n    lastLoginAt\\n  }\\n}\"}"
+			},
+			"created": 1558091542708,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f5c7a78e17e44c2b80b33c17fb14a843",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_5c40695b5e3b412e83aedb712cbf3ec0",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1558091542708,
+			"method": "POST",
+			"modified": 1558100606950,
+			"name": "Get all users",
+			"parameters": [],
+			"parentId": "fld_cf245dcf7b0c4bad851c72ea32235a1b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/{{ graphql_endpoint  }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_eac0ecc99a1d46649d6225cf0dcbdf1a",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query {\\n  getAllUsers {\\n    name\\n    surname\\n    role\\n    token\\n    createdAt\\n    lastLoginAt\\n  }\\n}\"}"
+			},
+			"created": 1558093481386,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f5c7a78e17e44c2b80b33c17fb14a843",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_5e0bac1403e34204b216d4e6ad632c2d",
+					"name": "Authorization",
+					"value": "ddialar_token"
+				},
+				{
+					"id": "pair_93c1c869995e40d19d892e1faf2d6b05",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1558091542708,
+			"method": "POST",
+			"modified": 1558100740711,
+			"name": "Get all users SYSADMIN",
+			"parameters": [],
+			"parentId": "fld_521264f1aaab4113b7b550c95c2fffa7",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/{{ graphql_endpoint  }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0cb209cbdb4c42aea775f3f65ae2ffd8",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query {\\n  getAllUsers {\\n    name\\n    surname\\n    role\\n    token\\n    createdAt\\n    lastLoginAt\\n  }\\n}\"}"
+			},
+			"created": 1558096783683,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f5c7a78e17e44c2b80b33c17fb14a843",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_5e0bac1403e34204b216d4e6ad632c2d",
+					"name": "Authorization",
+					"value": "john_doe_token"
+				},
+				{
+					"id": "pair_93c1c869995e40d19d892e1faf2d6b05",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1558091542758,
+			"method": "POST",
+			"modified": 1558101875323,
+			"name": "Get all users GUEST",
+			"parameters": [],
+			"parentId": "fld_521264f1aaab4113b7b550c95c2fffa7",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/{{ graphql_endpoint  }}",
+			"_type": "request"
+		}
+	]
+}

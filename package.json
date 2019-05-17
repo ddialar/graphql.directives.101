@@ -1,0 +1,92 @@
+{
+  "name": "directives.graphql",
+  "version": "1.0.0",
+  "description": "Basic example in order to introduction to Directives with GraphQL",
+  "author": "Dailos Rafael Díaz Lara <ddialar@gmail.com>",
+  "license": "Creative Commons BY-NC-ND 4.0",
+  "keywords": [
+    "GraphQL",
+    "SDL",
+    "Schema Definition Language",
+    "Apollo Server",
+    "NodeJS",
+    "Directives"
+  ],
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddialar/graphql.directives.101.git"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 8
+    },
+    "rules": {
+      "indent": [
+        "error",
+        4
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-undef": [
+        "error"
+      ]
+    }
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "env": {
+      "debug": {
+        "sourceMap": "inline",
+        "retainLines": true
+      }
+    }
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ignore": [
+      "node_modules/*"
+    ],
+    "ext": "js,graphql",
+    "env": {
+      "BABEL_DISABLE_CACHE": 1
+    },
+    "exec": "babel-node src/server.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.16.0",
+    "nodemo": "^1.0.0",
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "apollo-server": "^2.5.0",
+    "graphql": "^14.3.0",
+    "graphql-import": "^0.7.1"
+  }
+}
