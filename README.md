@@ -1,5 +1,7 @@
 ![GraphQL - Header](docs/img/gql_directives_header.png)
 
+Slides available at this [link](http://bit.ly/graphql-directives-why-and-how).
+
 # GraphQL Directives - Why and How?
 
 ## Introduction
@@ -68,9 +70,9 @@ At this brach directives are implemented.
 
 Into the [src/graphql](https://github.com/ddialar/graphql.directives.101/tree/auth_directive/src/graphql) folder, you will find a new dolder named `directives` where the `AuthDirective` business logic is implemented.
 
-In addition, the [schema.graphql](https://github.com/ddialar/graphql.directives.101/blob/auth_directive/src/graphql/schema.graphql) file has been also edited in order to define the `@auth` directive.
+In addition, if you check the [schema.graphql](https://github.com/ddialar/graphql.directives.101/blob/auth_directive/src/graphql/schema.graphql) file, you can see that it has been also edited in order to define the `@auth` directive.
 
-Now, with Insomnia open, you can run the request `Get all users GUEST` contained into the `Auth Directive` folder.
+Now, comming back to Insomnia, you can run the request `Get all users GUEST` contained into the `Auth Directive` folder.
 
 You can check that if you run the query (`ctrl + enter` or `cmd + enter`), you receive a non authorized error.
 
@@ -90,7 +92,7 @@ You can check that if you run the query (`ctrl + enter` or `cmd + enter`), you r
 }
 ```
 
-However, if you edit the request commenting or deleting all fields except `name` and `surname`, you will receive users data successfully.
+However, if you edit the request commenting or deleting all fields except `name` and `surname`, and you run the query again, you will receive users data successfully.
 
 ```graphql
 # Edited request.
@@ -124,6 +126,6 @@ query {
 }
 ```
 
-We obtaine this API's behaviour because the `@auth` directive is applied to specific fields and this user has not enough authorization role in order to get that fields information.
+We obtaine this API's behaviour because the `@auth` directive is applied to specific fields of the object type and this user who is placing the request has not enough authorization role in order to get that fields information.
 
-Finally, if you can run the request `Get all users SYSADMIN` contained into the `Auth Directive` folder, you will be able to get the whole data without any issue.
+Finally, if you can run the request `Get all users SYSADMIN` contained into the `Auth Directive` folder, you will be able to get the whole users data without any issue. That happends because this user owns the needed role level in order to receive data. 

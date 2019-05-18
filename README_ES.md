@@ -1,5 +1,7 @@
 ![GraphQL - Header](docs/img/gql_directives_header.png)
 
+Presentación disponible en es [enlace](http://bit.ly/graphql-directives-why-and-how).
+
 # GraphQL Directives - Why and How?
 
 ## Introducción
